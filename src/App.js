@@ -8,6 +8,11 @@ import './App.css';
 // super();
 // }
 
+// class components also give us access to set State which allows us to modify the state object in this component.
+// On every single HTML element we have access to a property called onClick which takes a function that gets called
+// whenever that element gets clicked.
+
+// this.setState is object that takes in all of the properties that you want to change.
 class App extends Component {
 	constructor() {
 		super();
@@ -23,7 +28,7 @@ class App extends Component {
 				<header className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
 					<p>{this.state.string}</p>
-					<button>Change Text</button>
+					<button onClick={() => this.setState({ string: 'React is a State ofMind()' })}>Change Text</button>
 				</header>
 			</div>
 		);
