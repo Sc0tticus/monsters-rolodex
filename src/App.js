@@ -13,6 +13,7 @@ import './App.css';
 // whenever that element gets clicked.
 
 // this.setState is object that takes in all of the properties that you want to change.
+// this.setState gives us a lot of control over what we want our components to Display.
 class App extends Component {
 	constructor() {
 		super();
@@ -28,7 +29,7 @@ class App extends Component {
 				<header className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
 					<p>{this.state.string}</p>
-					<button onClick={() => this.setState({ string: 'React is a State ofMind()' })}>Change Text</button>
+					<button onClick={() => this.setState({ string: 'React is a State of Mind' })}>Change Text</button>
 				</header>
 			</div>
 		);
