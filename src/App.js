@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // By using a class component we get access to State
@@ -19,18 +18,30 @@ class App extends Component {
 		super();
 
 		this.state = {
-			string: 'Hello Scott, my dude'
+			monsters: [
+				{
+					name: 'Frankenstein',
+					id: 'asr2'
+				},
+				{
+					name: 'Dracula',
+					id: 'ar2'
+				},
+				{
+					name: 'Zombie',
+					id: 'as1'
+				}
+			]
 		};
 	}
 
+	// as soon as state changes, the component gets re-rendered to update to the new state.
 	render() {
 		return (
 			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p>{this.state.string}</p>
-					<button onClick={() => this.setState({ string: 'React is a State of Mind' })}>Change Text</button>
-				</header>
+				{this.state.monsters.map(monster => (
+					<h1 key={monster.id}>{monster.name}</h1>
+				))}
 			</div>
 		);
 	}
