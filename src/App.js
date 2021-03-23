@@ -18,20 +18,7 @@ class App extends Component {
 		super();
 
 		this.state = {
-			monsters: [
-				{
-					name: 'Frankenstein',
-					id: 'asr2'
-				},
-				{
-					name: 'Dracula',
-					id: 'ar2'
-				},
-				{
-					name: 'Zombie',
-					id: 'as1'
-				}
-			]
+			monsters: []
 		};
 	}
 
@@ -39,7 +26,7 @@ class App extends Component {
 		//A fetch returns a promise, and the promise gives us a response of the actual body
 		fetch('https://jsonplaceholder.typicode.com/users')
 			.then(response => response.json())
-			.then(users => console.log(users));
+			.then(users => this.setState({ monsters: users }));
 	}
 
 	// as soon as state changes, the component gets re-rendered to update to the new state.
