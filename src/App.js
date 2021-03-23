@@ -35,6 +35,13 @@ class App extends Component {
 		};
 	}
 
+	componentDidMount() {
+		//A fetch returns a promise, and the promise gives us a response of the actual body
+		fetch('https://jsonplaceholder.typicode.com/users')
+			.then(response => response.json())
+			.then(users => console.log(users));
+	}
+
 	// as soon as state changes, the component gets re-rendered to update to the new state.
 	render() {
 		return (
