@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CardList } from './components/card-list/card-list.component.jsx';
 import './App.css';
 
 // By using a class component we get access to State
@@ -33,6 +34,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				<CardList name="Scott" />
 				{this.state.monsters.map(monster => (
 					<h1 key={monster.id}>{monster.name}</h1>
 				))}
