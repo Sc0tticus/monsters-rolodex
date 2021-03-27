@@ -19,11 +19,14 @@ class App extends Component {
 		super();
 
 		this.state = {
-			monsters: []
+			monsters: [],
+			searchField: ''
 		};
 	}
 
 	// The user URL below is an API
+	// We are performing an API call in componentDidMount to retrieve users when we initially load the page.
+
 	componentDidMount() {
 		//A fetch returns a promise, and the promise gives us a response of the actual body
 		fetch('https://jsonplaceholder.typicode.com/users')
@@ -32,9 +35,25 @@ class App extends Component {
 	}
 
 	// as soon as state changes, the component gets re-rendered to update to the new state.
+	// we need to take control whenever the user types something into the input, because we want to store that string on our state.
+	// By storing it on our state we'll be able to actually use it to filter out our monsters.
+	// we have access to the onChange method, which fires with a synthetic event, which is just an event in our browser.
+	// So whenver the input is changed  like when the user types or removes anything.
+	// Whenver the value in that input changes, the onChange event fires.
+	// value is a property on the input that will give a string value
+	// setState is an asynchronous function call.
+
 	render() {
 		return (
 			<div className="App">
+				<input
+					type="search"
+					placeholder="search monsters"
+					onChange={e => {
+						this.setState({ searchField: e.target.value });
+						console.log(this.state);
+					}}
+				/>
 				<CardList monsters={this.state.monsters}></CardList>
 			</div>
 		);

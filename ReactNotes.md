@@ -46,3 +46,5 @@ The keys to being a great React developer:
 
 1.  We are performing an API call in componentDidMount to retrieve users when we initially load the page with our JS, CSS, and HTML file. create-react-app simulates a fake server that sends the JS, CSS, and HTML files.
 2.  We get the users, and then gets each image of monsters from the Robohash API. This all we have built so far.
+
+Creating SearchField component: -<input type="search" placeholder="search monsters" />, search type attribute allows us use the placeholder attribute to have text be a placeholder.
