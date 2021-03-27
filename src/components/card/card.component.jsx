@@ -1,6 +1,7 @@
 import React from 'react';
 import './card.styles.css';
-// Update
+
+// The robohash URL below is an API.
 
 export const Card = props => (
 	<div className="card-container">

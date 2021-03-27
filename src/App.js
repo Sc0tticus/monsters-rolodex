@@ -23,6 +23,7 @@ class App extends Component {
 		};
 	}
 
+	// The user URL below is an API
 	componentDidMount() {
 		//A fetch returns a promise, and the promise gives us a response of the actual body
 		fetch('https://jsonplaceholder.typicode.com/users')
