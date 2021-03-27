@@ -63,3 +63,70 @@ Creating SearchField component: -<input type="search" placeholder="search monste
 -information flows down, changes flow up.
 -event handlers send actions up to the parent that something has happened and state needs to be updated.
 -you want state to live in a high enough position to where you can still pass down information to different nodes.
+
+#This
+-"this" is a special keyword in JS that references the context in which it's being invoked.
+-this.state means you are trying to reference the state on your class component.
+"this" keyword gets bound inside of the lifecycle and render methods because when we call super() we are extending the functionality that exists on Component that we get from React, which has the lifecycle methods and render.
+-we borrow these methods from Component
+
+#App.js notes
+// as soon as state changes, the component gets re-rendered to update to the new state.
+// we need to take control whenever the user types something into the input, because we want to store that string on our state.
+// By storing it on our state we'll be able to actually use it to filter out our monsters.
+// we have access to the onChange method, which fires with a synthetic event, which is just an event in our browser.
+// So whenver the input is changed like when the user types or removes anything.
+// Whenver the value in that input changes, the onChange event fires.
+// value is a property on the input that will give a string value
+// setState is an asynchronous function call.
+// add a callback for after setState has finished. Have to console.log in the callback function, which is a second argument
+// after setState.
+// React internally recogniges onChange and when something changes internally related to onChange, React will just run
+// that function.
+// React figures out the best time to update the DOM internally and will batch events.
+
+    // Destructuring allows us to pull properties off an object and set them to
+    // .includes() checks to see if the string values passed in matches anything.
+
+    // the above is the equivalent to saying: const monsters = this.state.monsters;
+    // const searchField = this.state.searchField.
+
+    // Component is actually re-rendering each time because whenever set state is called and the properties change,
+    // React re-renders the component, the filteredMonsters method gets called again.
+
+    // this.setState gets triggered everytime a user types something in, which in turn sets the state value for searchField,
+    // which then in turn causes our component to re-render and recall the render method, which then re-filters out the monsters
+    // by calling our monsters.filter which then sets a new array, which then gets passed to our CardList, which then re-renders
+    // CardList.
+    // React is able to take control of what to render and re-render automatically.
+
+-Define state within the constructor because it runs first before anything gets called.
+
+-.bind() is a handle on any function that returns a new function, where the context of "this" is set
+to whatever we passed to it.
+
+-=> arrow functions automatically allow you to set "this" when "this" is defined.
+
+Quick Note: Binding in React
+In the previous video, we learned about arrow functions and binding in React. A good rule of thumb is this: Use arrow functions on any class methods you define and aren't part of React (i.e. render(), componentDidMount()).
+
+If you want to learn more about this, have a read here: https://reactjs.org/docs/handling-events.html
+
+// functional components don't have access to state because they don't have access to constructor
+// constructor() is a class method on our component that we import from React, that we extend our class from.
+// Functional components also don't have access to life-cycle methods. They don't have internal state or lifecycle methods.
+// Sometimes all we want to do is render some HTML, a funcitonal component get some props and return some HTML.
+// If you don't need internal state/lifecycle methods, use a functional component.
+
+// By using a class component we get access to State
+// State is a JS object with properties that we can access at any point withing out class
+// start off with the constructor() {
+// super();
+// }
+
+// class components also give us access to set State which allows us to modify the state object in this component.
+// On every single HTML element we have access to a property called onClick which takes a function that gets called
+// whenever that element gets clicked.
+
+// this.setState is object that takes in all of the properties that you want to change.
+// this.setState gives us a lot of control over what we want our components to Display.

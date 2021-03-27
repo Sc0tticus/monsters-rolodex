@@ -1,10 +1,8 @@
 import React from 'react';
-import { Card } from '../card/card.component';
-import './card-list.styles.css';
 
-// creating a functional component below
-// components take in props as arguments
-// props is an object
+import { Card } from '../card/card.component';
+
+import './card-list.styles.css';
 
 export const CardList = props => (
 	<div className="card-list">
@@ -13,3 +11,6 @@ export const CardList = props => (
 		))}
 	</div>
 );
+// creating a functional component below
+// components take in props as arguments
+// props is an object
