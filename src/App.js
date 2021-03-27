@@ -54,6 +54,15 @@ class App extends Component {
 	// the above is the equivalent to saying: const monsters = this.state.monsters;
 	// const searchField = this.state.searchField.
 
+	// Component is actually re-rendering each time because whenever set state is called and the properties change,
+	// React re-renders the component, the filteredMonsters method gets called again.
+
+	// this.setState gets triggered everytime a user types something in, which in turn sets the state value for searchField,
+	// which then in turn causes our component to re-render and recall the render method, which then re-filters out the monsters
+	// by calling our monsters.filter which then sets a new array, which then gets passed to our CardList, which then re-renders
+	// CardList.
+	// React is able to take control of what to render and re-render automatically.
+
 	render() {
 		const { monsters, searchField } = this.state;
 		const filteredMonsters = monsters.filter(monster =>
