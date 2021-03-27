@@ -53,3 +53,8 @@ Creating SearchField component: -<input type="search" placeholder="search monste
 -Synchronous: happens almost immediatedly, it happens when JS knows how much time it will take, JS will wait for the event to finish before running the rest of the code.
 -Asynchronous: action or event, takes an indefinite amount time that JS does not know. JS runs the rest of the code after and when the async event finishes, it runs the finished event.
 -this.setState does not happen immediately.
+
+#Synthetic Events
+-when a DOM event happens, when a user clicks or types something in an input, React intercepts that something has changed, and tells the React app something has changed. A synthetic event is a fake event.
+-onChange is camelcase, receives the event, and updates the state.  
+-state gets updated in the App when a user changes something, via a user action.

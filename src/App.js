@@ -44,8 +44,22 @@ class App extends Component {
 	// setState is an asynchronous function call.
 	// add a callback for after setState has finished. Have to console.log in the callback function, which is a second argument
 	// after setState.
+	// React internally recogniges onChange and when something changes internally related to onChange, React will just run
+	// that function.
+	// React figures out the best time to update the DOM internally and will batch events.
+
+	// Destructuring allows us to pull properties off an object and set them to
+	// .includes() checks to see if the string values passed in matches anything.
+
+	// the above is the equivalent to saying: const monsters = this.state.monsters;
+	// const searchField = this.state.searchField.
 
 	render() {
+		const { monsters, searchField } = this.state;
+		const filteredMonsters = monsters.filter(monster =>
+			monster.name.toLowerCase().includes(searchField.toLowerCase())
+		);
+
 		return (
 			<div className="App">
 				<input
@@ -53,10 +67,9 @@ class App extends Component {
 					placeholder="search monsters"
 					onChange={e => {
 						this.setState({ searchField: e.target.value }, () => console.log(this.state));
-						console.log(this.state);
 					}}
 				/>
-				<CardList monsters={this.state.monsters}></CardList>
+				<CardList monsters={filteredMonsters}></CardList>
 			</div>
 		);
 	}
