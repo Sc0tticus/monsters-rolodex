@@ -48,3 +48,8 @@ The keys to being a great React developer:
 2.  We get the users, and then gets each image of monsters from the Robohash API. This all we have built so far.
 
 Creating SearchField component: -<input type="search" placeholder="search monsters" />, search type attribute allows us use the placeholder attribute to have text be a placeholder.
+
+#Synchronous vs Asynchronous
+-Synchronous: happens almost immediatedly, it happens when JS knows how much time it will take, JS will wait for the event to finish before running the rest of the code.
+-Asynchronous: action or event, takes an indefinite amount time that JS does not know. JS runs the rest of the code after and when the async event finishes, it runs the finished event.
+-this.setState does not happen immediately.

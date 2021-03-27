@@ -42,6 +42,8 @@ class App extends Component {
 	// Whenver the value in that input changes, the onChange event fires.
 	// value is a property on the input that will give a string value
 	// setState is an asynchronous function call.
+	// add a callback for after setState has finished. Have to console.log in the callback function, which is a second argument
+	// after setState.
 
 	render() {
 		return (
@@ -50,7 +52,7 @@ class App extends Component {
 					type="search"
 					placeholder="search monsters"
 					onChange={e => {
-						this.setState({ searchField: e.target.value });
+						this.setState({ searchField: e.target.value }, () => console.log(this.state));
 						console.log(this.state);
 					}}
 				/>
