@@ -58,3 +58,8 @@ Creating SearchField component: -<input type="search" placeholder="search monste
 -when a DOM event happens, when a user clicks or types something in an input, React intercepts that something has changed, and tells the React app something has changed. A synthetic event is a fake event.
 -onChange is camelcase, receives the event, and updates the state.  
 -state gets updated in the App when a user changes something, via a user action.
+
+#State
+-information flows down, changes flow up.
+-event handlers send actions up to the parent that something has happened and state needs to be updated.
+-you want state to live in a high enough position to where you can still pass down information to different nodes.
