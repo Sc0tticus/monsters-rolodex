@@ -130,3 +130,5 @@ If you want to learn more about this, have a read here: https://reactjs.org/docs
 
 // this.setState is object that takes in all of the properties that you want to change.
 // this.setState gives us a lot of control over what we want our components to Display.
+
+-yarn build: the build script builds all of our React code into the final code that our browser needs.
